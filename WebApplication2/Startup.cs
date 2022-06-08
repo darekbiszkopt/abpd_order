@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication2.DataAccess;
 
 namespace WebApplication2
 {
@@ -26,7 +27,7 @@ namespace WebApplication2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<IWarhousesDataAccess, WarhousesDataAccess>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
